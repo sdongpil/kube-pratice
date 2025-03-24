@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: spring-deployment
+
+spec:
+  #디플로이먼트 정보
+  replicas: 3
+  selector:
+    matchLabels:
+      app: config-test
+
+ # 파드 정보
+  template:
+    metadata:
+      labels:
+        app: config-test
+    spec:
+      containers:
+        - name: config-test-container
+          image: config-test
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MY_ACCOUNT
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-config
+                  key: my-account
+            - name: MY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: spring-secret
+                  key: my-password
+
+
+

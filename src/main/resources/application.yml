@@ -1,0 +1,5 @@
+server:
+  port: 8081
+
+MY_ACCOUNT: dongpil
+MY_PASSWORD: kk
