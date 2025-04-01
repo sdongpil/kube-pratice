@@ -5,6 +5,6 @@ metadata:
   name: spring-config
 
 data:
-  db-host: mysql-service
+  db-host: kube-db.cxy6oce2gvpl.ap-northeast-2.rds.amazonaws.com
   db-port: "3306"
-  db-name: kub-practice
+  db-name: test

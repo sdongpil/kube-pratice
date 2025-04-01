@@ -5,11 +5,13 @@ metadata:
   name: spring-service
 
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: backend-app
   ports:
     - protocol: TCP
-      nodePort: 30000
       targetPort: 8080
-      port: 8080
+      port: 80 # 외부에서 사용자가 요청하는 포트 번호
+
+
+
