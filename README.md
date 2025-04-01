@@ -23,3 +23,15 @@ kubectl config use-context <컨텍스트_이름>
 ```bash
 kubectl config unset contexts.<컨텍스트_이름>
 ```
+
+
+
+
+### 매니페스트 변경 후 실행 순서
+
+```bash
+$ kubectl apply -f spring-secret.yaml
+$ kubectl apply -f spring-config.yaml
+$ kubectl apply -f spring-deployment.yaml
+$ kubectl apply -f spring-service.yaml
+```
